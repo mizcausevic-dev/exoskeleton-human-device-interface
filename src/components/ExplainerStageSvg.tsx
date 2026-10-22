@@ -222,9 +222,9 @@ export const ExplainerStageSvg: React.FC<ExplainerStageSvgProps> = ({
         {/* =====================================================================
             ARTICULATED LOWER LIMB + EXOSKELETON ASSEMBLY
         ===================================================================== */}
-        <g transform={`translate(${anklePivotX}, ${anklePivotY})}>
+        <g transform={`translate(${anklePivotX}, ${anklePivotY})`}>
           {/* SHANK & PROXIMAL EXOSKELETON FRAME GROUP */}
-          <g transform={`rotate(${shankTiltDeg})}>
+          <g transform={`rotate(${shankTiltDeg})`}>
             {/* Schematic Soft-Tissue Envelope (Shank) */}
             <path
               d="M -68 -360 C -76 -240, -62 -110, -42 -15 L 44 -15 C 68 -110, 82 -240, 70 -360 Z"
@@ -404,7 +404,7 @@ export const ExplainerStageSvg: React.FC<ExplainerStageSvgProps> = ({
           </g>
 
           {/* FOOT, SHOE, TOE STRUT & HEEL SPUR GROUP */}
-          <g transform={`rotate(${footPitchDeg})}>
+          <g transform={`rotate(${footPitchDeg})`}>
             {/* Running Shoe Silhouette (0.3 kg Nike running shoe) */}
             <path
               d="M -85 18 C -92 48, -88 92, -65 112 L 195 112 C 218 112, 226 90, 205 72 L 60 22 Z"
