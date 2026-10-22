@@ -51,7 +51,7 @@ export const SOURCE_LEDGER: SourceLedgerEntry[] = [
   {
     id: 'SL-03',
     aspect: 'Load Transfer',
-    claimOrRelationship: 'When the brushless motor drives the 0.020 m radius aluminum drum, tension in the Vectran cable pulls upward on the heel spur (up to 0.115 m lever arm). Because the carbon-fiber and aluminum frame has a rigid mechanical joint, the axial component of the cable force is reacted at the exoskeleton joint rather than as downward shear on the wearer\u2019s skin, applying primarily normal force to the shank alongside upward heel tension and downward forefoot reaction.',
+    claimOrRelationship: 'When the brushless motor drives the 0.020 m radius aluminum drum, tension in the Vectran cable pulls upward on the heel spur (up to 0.115 m lever arm). Because the carbon-fiber and aluminum frame has a rigid mechanical joint, the axial component of the cable force is reacted at the exoskeleton joint rather than as downward shear on the wearer’s skin, applying primarily normal force to the shank alongside upward heel tension and downward forefoot reaction.',
     sourceTitle: 'Personalizing exoskeleton assistance while walking in the real world',
     authorsAndYear: 'Slade, Kochenderfer, Delp & Collins (2022)',
     sourceUrl: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC9556303/',
@@ -73,7 +73,7 @@ export const SOURCE_LEDGER: SourceLedgerEntry[] = [
   {
     id: 'SL-05',
     aspect: 'Alignment',
-    claimOrRelationship: 'The device rotates about a mechanical pin joint with a rotary encoder, whereas the biological talocrural (ankle) complex moves around a shifting, multi-degree-of-freedom anatomical axis. In the untethered prototype, the effective heel-spur lever arm decreases with plantarflexion and reaches a geometric singularity at 55\u00b0 plantarflexion so torque cannot hyperextend the ankle.',
+    claimOrRelationship: 'The device rotates about a mechanical pin joint with a rotary encoder, whereas the biological talocrural (ankle) complex moves around a shifting, multi-degree-of-freedom anatomical axis. In the untethered prototype, the effective heel-spur lever arm decreases with plantarflexion and reaches a geometric singularity at 55° plantarflexion so torque cannot hyperextend the ankle.',
     sourceTitle: 'Personalizing exoskeleton assistance while walking in the real world; Opportunities and challenges in the development of exoskeletons for locomotor assistance',
     authorsAndYear: 'Slade et al. (2022); Siviy et al. (2023)',
     sourceUrl: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC9556303/',
@@ -84,7 +84,7 @@ export const SOURCE_LEDGER: SourceLedgerEntry[] = [
   {
     id: 'SL-06',
     aspect: 'Sensing & Actuation',
-    claimOrRelationship: 'Portable sensing fuses three onboard modalities at 200 Hz on a Raspberry Pi 4b: (1) a pressure-sensing insole (heel, fifth metatarsal, first metatarsal, great toe) to detect heel strike and segment stride period, (2) a joint rotary encoder measuring ankle angle (\u03b8) and angular velocity (\u03b8\u0307), and (3) a full Wheatstone bridge of strain gauges on the superior and inferior heel spur (with Futek IAA100 amplifier) to measure bending moment directly at the joint.',
+    claimOrRelationship: 'Portable sensing fuses three onboard modalities at 200 Hz on a Raspberry Pi 4b: (1) a pressure-sensing insole (heel, fifth metatarsal, first metatarsal, great toe) to detect heel strike and segment stride period, (2) a joint rotary encoder measuring ankle angle (θ) and angular velocity (θ̇), and (3) a full Wheatstone bridge of strain gauges on the superior and inferior heel spur (with Futek IAA100 amplifier) to measure bending moment directly at the joint.',
     sourceTitle: 'Personalizing exoskeleton assistance while walking in the real world',
     authorsAndYear: 'Slade, Kochenderfer, Delp & Collins (2022)',
     sourceUrl: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC9556303/',
@@ -101,18 +101,18 @@ export const SOURCE_LEDGER: SourceLedgerEntry[] = [
     sourceUrl: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC9556303/',
     sectionFigureOrPassage: 'Methods sections "Data-driven optimization", "Untethered exoskeleton design", "Opportunistic optimization approach", and "Comparison with other untethered exoskeletons".',
     supportType: 'Direct',
-    simplificationsAndLimitations: 'The comparative graph in Chapter 4 is explicitly labeled "Qualitative illustration\u2014not measured data" and omits numerical vertical scales while preserving the documented gait-cycle timing events (heel strike 0%, late-stance peak ~54.6%, toe-off ~62%, swing slack 62-100%).'
+    simplificationsAndLimitations: 'The comparative graph in Chapter 4 is explicitly labeled "Qualitative illustration—not measured data" and omits numerical vertical scales while preserving the documented gait-cycle timing events (heel strike 0%, late-stance peak ~54.6%, toe-off ~62%, swing slack 62-100%).'
   },
   {
     id: 'SL-08',
     aspect: 'Variability',
-    claimOrRelationship: 'In 10 healthy young adults walking outdoors on a 566-m public sidewalk course, data-driven personalization over 44-step bouts increased self-selected walking speed by 9 \u00b1 4% and reduced metabolic cost of transport by 17 \u00b1 5% compared with normal shoes (and reduced metabolic rate by 23 \u00b1 8% on a treadmill at 1.5 m/s), roughly twice the benefit of generic speed-adaptive parameters.',
+    claimOrRelationship: 'In 10 healthy young adults walking outdoors on a 566-m public sidewalk course, data-driven personalization over 44-step bouts increased self-selected walking speed by 9 ± 4% and reduced metabolic cost of transport by 17 ± 5% compared with normal shoes (and reduced metabolic rate by 23 ± 8% on a treadmill at 1.5 m/s), roughly twice the benefit of generic speed-adaptive parameters.',
     sourceTitle: 'Personalizing exoskeleton assistance while walking in the real world; Robotic exoskeleton helps people walk',
     authorsAndYear: 'Slade et al. (2022); Doctrow / NIH Research Matters (2022)',
     sourceUrl: 'https://www.nih.gov/news-events/nih-research-matters/robotic-exoskeleton-helps-people-walk',
     sectionFigureOrPassage: 'NIH summary paragraphs 7-8; Slade et al. Abstract and Main text Figure 5f-h.',
     supportType: 'Direct',
-    simplificationsAndLimitations: 'Study results apply to the tested cohort of 10 healthy adults (age 24.2 \u00b1 1.8 yr) with prior exoskeleton experience using a research prototype (36.3-minute battery life, long heel spur requiring care on stairs). They do not establish universal fit or clinical outcomes.'
+    simplificationsAndLimitations: 'Study results apply to the tested cohort of 10 healthy adults (age 24.2 ± 1.8 yr) with prior exoskeleton experience using a research prototype (36.3-minute battery life, long heel spur requiring care on stairs). They do not establish universal fit or clinical outcomes.'
   },
   {
     id: 'SL-09',
