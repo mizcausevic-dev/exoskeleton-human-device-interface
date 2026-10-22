@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720" width="1400" height="720" font-family="system-ui, -apple-system, sans-serif">
+  <title>Exoskeleton Human-Device Interface Conceptual Mind Map</title>
+  <desc>Five-branch conceptual mind map radiating from the central Exoskeleton Human-Device Interface node: (1) Physical attachment, (2) Load transfer, (3) Alignment and movement, (4) Sensing, control, and actuation, and (5) User variability and limitations.</desc>
+  <defs>
+    <pattern id="mm-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1E293B" stroke-width="1" stroke-opacity="0.5" />
+    </pattern>
+  </defs>
+
+  <rect width="1400" height="720" fill="#0B1019" />
+  <rect width="1400" height="720" fill="url(#mm-grid)" />
+
+  <path d="M 700 360 C 530 360, 440 145, 290 145" fill="none" stroke="#E2E8F0" stroke-width="3" />
+  <path d="M 700 360 C 530 360, 440 555, 290 555" fill="none" stroke="#FFD166" stroke-width="3.5" />
+  <path d="M 700 360 C 870 360, 960 130, 1110 130" fill="none" stroke="#00E5FF" stroke-width="3" />
+  <path d="M 700 360 L 1110 360" fill="none" stroke="#00E5FF" stroke-width="3" stroke-dasharray="8 5" />
+  <path d="M 700 360 C 870 360, 960 585, 1110 585" fill="none" stroke="#9D4EDD" stroke-width="3" />
+
+  <g transform="translate(515, 298)">
+    <rect x="0" y="0" width="370" height="124" rx="16" fill="#111827" stroke="#00E5FF" stroke-width="3" />
+    <text x="185" y="36" text-anchor="middle" fill="#00E5FF" font-size="12.5" font-weight="700" font-family="monospace">CENTRAL SYSTEM ARCHITECTURE</text>
+    <text x="185" y="66" text-anchor="middle" fill="#F8FAFC" font-size="20" font-weight="800">EXOSKELETON HUMAN-DEVICE</text>
+    <text x="185" y="90" text-anchor="middle" fill="#F8FAFC" font-size="20" font-weight="800">INTERFACE</text>
+    <text x="185" y="112" text-anchor="middle" fill="#94A3B8" font-size="11.5" font-family="monospace">Untethered Ankle Architecture (Slade et al., 2022)</text>
+  </g>
+
+  <g transform="translate(36, 48)">
+    <rect x="0" y="0" width="390" height="195" rx="12" fill="#0F172A" stroke="#CBD5E1" stroke-width="2" />
+    <text x="18" y="30" fill="#E2E8F0" font-size="16" font-weight="700">1. Physical attachment</text>
+    <text x="18" y="56" fill="#CBD5E1" font-size="13">" Proximal: Below-knee Velcro calf strap +</text>
+    <text x="30" y="74" fill="#94A3B8" font-size="12.5">interchangeable mediolateral leg spacers</text>
+    <text x="18" y="100" fill="#CBD5E1" font-size="13">" Distal: Running shoe (0.3 kg) with embedded</text>
+    <text x="30" y="118" fill="#94A3B8" font-size="12.5">carbon-fiber sole plate (pins) + heel rope tube</text>
+    <text x="18" y="144" fill="#CBD5E1" font-size="13">" Power Mass: 0.3 kg 24 V battery worn at waist</text>
+    <text x="30" y="162" fill="#94A3B8" font-size="12.5">to keep mass proximal; 1.2 kg worn per ankle</text>
+    <text x="18" y="184" fill="#00E5FF" font-size="11" font-family="monospace">[Documented Hardware  Slade et al. 2022]</text>
+  </g>
+
+  <g transform="translate(36, 455)">
+    <rect x="0" y="0" width="390" height="205" rx="12" fill="#0F172A" stroke="#FFD166" stroke-width="2.5" />
+    <text x="18" y="30" fill="#FFD166" font-size="16" font-weight="700">2. Load transfer</text>
+    <text x="18" y="56" fill="#E2E8F0" font-size="13">" Cable Tension: 0.020 m drum winds Vectran</text>
+    <text x="30" y="74" fill="#94A3B8" font-size="12.5">cable to pull heel spur upward (up to 54 Nm)</text>
+    <text x="18" y="100" fill="#E2E8F0" font-size="13">" Shear Prevention: Rigid frame reacts axial cable</text>
+    <text x="30" y="118" fill="#94A3B8" font-size="12.5">force at pin joint -&gt; normal force on shank skin</text>
+    <text x="18" y="144" fill="#E2E8F0" font-size="13">" Interface Compliance: Soft tissue &amp; straps deform;</text>
+    <text x="30" y="162" fill="#94A3B8" font-size="12.5">direct joint strain gauges bypass compliance losses</text>
+    <text x="18" y="190" fill="#FFD166" font-size="11" font-family="monospace">[Documented Coupling + Schematic Cutaway]</text>
+  </g>
+
+  <g transform="translate(974, 32)">
+    <rect x="0" y="0" width="390" height="195" rx="12" fill="#0F172A" stroke="#00E5FF" stroke-width="2" />
+    <text x="18" y="30" fill="#00E5FF" font-size="16" font-weight="700">3. Alignment and movement</text>
+    <text x="18" y="56" fill="#E2E8F0" font-size="13">" Kinematic Discrepancy: Fixed mechanical pin</text>
+    <text x="30" y="74" fill="#94A3B8" font-size="12.5">pivot vs. shifting biological talocrural axis</text>
+    <text x="18" y="100" fill="#E2E8F0" font-size="13">" Lever-Arm Singularity: 0.115 m max heel lever</text>
+    <text x="30" y="118" fill="#94A3B8" font-size="12.5">drops to zero at 55 deg plantarflexion for safety</text>
+    <text x="18" y="144" fill="#E2E8F0" font-size="13">" Swing Freedom: Cable driven slack (62-100%</text>
+    <text x="30" y="162" fill="#94A3B8" font-size="12.5">stride) so foot clears ground without damping</text>
+    <text x="18" y="184" fill="#00E5FF" font-size="11" font-family="monospace">[Schematic Axes + Documented Geometry]</text>
+  </g>
+
+  <g transform="translate(974, 258)">
+    <rect x="0" y="0" width="390" height="205" rx="12" fill="#0F172A" stroke="#00E5FF" stroke-width="2" />
+    <text x="18" y="30" fill="#00E5FF" font-size="16" font-weight="700">4. Sensing, control, and actuation</text>
+    <text x="18" y="56" fill="#E2E8F0" font-size="13">" 200 Hz Sensor Fusion (RPi 4b): 4-point insole +</text>
+    <text x="30" y="74" fill="#94A3B8" font-size="12.5">ankle rotary encoder (theta, dtheta/dt) + strain bridge</text>
+    <text x="18" y="100" fill="#E2E8F0" font-size="13">" Torque Timing: Rises in mid-stance, peaks near</text>
+    <text x="30" y="118" fill="#94A3B8" font-size="12.5">54.6% gait cycle, falls to zero by ~62% toe-off</text>
+    <text x="18" y="144" fill="#E2E8F0" font-size="13">" Opportunistic Optimization: Logistic classifier</text>
+    <text x="30" y="162" fill="#94A3B8" font-size="12.5">ranks control-law pairs over 44-step bouts</text>
+    <text x="18" y="190" fill="#FFD166" font-size="11" font-family="monospace">[Documented 200 Hz Control Loop]</text>
+  </g>
+
+  <g transform="translate(974, 492)">
+    <rect x="0" y="0" width="390" height="200" rx="12" fill="#0F172A" stroke="#9D4EDD" stroke-width="2" />
+    <text x="18" y="30" fill="#E9D5FF" font-size="16" font-weight="700">5. User variability and limitations</text>
+    <text x="18" y="56" fill="#E2E8F0" font-size="13">" Individualized Gains: +9 ± 4% speed, -17 ± 5%</text>
+    <text x="30" y="74" fill="#94A3B8" font-size="12.5">outdoor energy cost (n = 10, ~2x generic assist)</text>
+    <text x="18" y="100" fill="#E2E8F0" font-size="13">" Prototype Limits: 36.3-min battery, long heel</text>
+    <text x="30" y="118" fill="#94A3B8" font-size="12.5">spur on stairs, neutral all-day comfort (SUS 72.5)</text>
+    <text x="18" y="144" fill="#E2E8F0" font-size="13">" Clinical Heterogeneity: Responder differences,</text>
+    <text x="30" y="162" fill="#94A3B8" font-size="12.5">fit abrasion, fall risk &amp; supervision (Siviy 2023)</text>
+    <text x="18" y="186" fill="#E9D5FF" font-size="11" font-family="monospace">[System Boundaries &amp; Safety Limits]</text>
+  </g>
+</svg>
