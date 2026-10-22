@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 820" width="1100" height="820" font-family="system-ui, -apple-system, sans-serif">
+  <title>Annotated Technical Diagram of the Untethered Ankle Exoskeleton Human-Device Interface</title>
+  <desc>Technical schematic showing numbered subsystems 01 through 07 of the untethered ankle exoskeleton (Slade et al., 2022): waist battery pack, proximal calf cuff and spacer, Raspberry Pi 4b controller electronics, CubeMars AK80-9 motor and aluminum drum, rigid carbon-fiber frame and rotary encoder joint, posterior heel spur with Wheatstone strain bridge, and shoe interface with carbon sole plate and 4-point pressure insole.</desc>
+  <defs>
+    <pattern id="bp-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1E293B" stroke-width="1" stroke-opacity="0.65" />
+    </pattern>
+    <marker id="bp-arrow-gold" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#FFD166" />
+    </marker>
+    <marker id="bp-arrow-cyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#00E5FF" />
+    </marker>
+  </defs>
+
+  <rect width="1100" height="820" fill="#0B1019" />
+  <rect width="1100" height="820" fill="url(#bp-grid)" />
+
+  <g transform="translate(36, 28)">
+    <rect x="0" y="0" width="1028" height="64" rx="8" fill="#0F172A" stroke="#1E293B" stroke-width="1.5" />
+    <text x="20" y="26" fill="#00E5FF" font-size="12.5" font-weight="700" font-family="monospace">ANNOTATED HUMAN-DEVICE INTERFACE SCHEMATIC // SLADE ET AL. (2022) ARCHITECTURE</text>
+    <text x="20" y="48" fill="#CBD5E1" font-size="14">Subsystems 01-07: Attachment, shear-free load reaction, schematic axes, and 200 Hz sensing</text>
+  </g>
+
+  <g transform="translate(530, 565)">
+    <line x1="-420" y1="135" x2="460" y2="135" stroke="#334155" stroke-width="2.5" />
+
+    <g transform="translate(-390, -420)">
+      <rect x="0" y="0" width="225" height="78" rx="8" fill="#111827" stroke="#FFD166" stroke-width="2" />
+      <text x="16" y="28" fill="#FFD166" font-size="14" font-weight="700">01. Waist Battery Pack</text>
+      <text x="16" y="48" fill="#E2E8F0" font-size="12.5" font-family="monospace">24 V LiPo | 1300 mAh | 0.3 kg</text>
+      <text x="16" y="66" fill="#94A3B8" font-size="11.5" font-family="monospace">36.3 min max-assist runtime</text>
+      <path d="M 225 40 C 310 40, 360 110, 445 175" fill="none" stroke="#FFD166" stroke-width="2.5" stroke-dasharray="6 4" />
+    </g>
+
+    <path d="M -68 -360 C -76 -240, -60 -110, -40 -14 L 44 -14 C 66 -110, 80 -240, 68 -360 Z" fill="#1E293B" fill-opacity="0.65" stroke="#475569" stroke-width="2" />
+    <path d="M -25 -345 L -16 -20 L 16 -20 L 22 -345 Z" fill="#334155" stroke="#94A3B8" stroke-width="2" />
+    <path d="M -44 -330 L -36 -25 L -26 -25 L -32 -330 Z" fill="#273549" stroke="#64748B" stroke-width="1.5" />
+
+    <g transform="translate(0, -300)">
+      <rect x="-74" y="-22" width="158" height="44" rx="6" fill="#0F172A" stroke="#CBD5E1" stroke-width="2" />
+      <rect x="30" y="-26" width="24" height="52" rx="4" fill="#475569" stroke="#F8FAFC" stroke-width="1.5" />
+      <line x1="30" y1="0" x2="-45" y2="0" stroke="#FFD166" stroke-width="4" marker-end="url(#bp-arrow-gold)" />
+    </g>
+
+    <path d="M 50 -320 L 66 -320 L 60 -8 L 40 -8 Z" fill="#0F172A" stroke="#E2E8F0" stroke-width="2.5" />
+
+    <g transform="translate(66, -255)">
+      <rect x="0" y="0" width="62" height="80" rx="6" fill="#131B2E" stroke="#9D4EDD" stroke-width="2.5" />
+      <text x="10" y="26" fill="#E9D5FF" font-size="11.5" font-weight="700" font-family="monospace">RPi 4b</text>
+      <text x="10" y="44" fill="#00E5FF" font-size="11" font-family="monospace">200 Hz</text>
+      <text x="10" y="62" fill="#94A3B8" font-size="10.5" font-family="monospace">IAA100</text>
+    </g>
+
+    <g transform="translate(56, -130)">
+      <circle cx="26" cy="0" r="34" fill="#1E293B" stroke="#FFD166" stroke-width="2.8" />
+      <circle cx="26" cy="0" r="17" fill="#0F172A" stroke="#F8FAFC" stroke-width="2" />
+    </g>
+
+    <line x1="90" y1="-114" x2="104" y2="20" stroke="#FFD166" stroke-width="4" />
+
+    <path d="M -86 18 C -92 48, -88 92, -65 112 L 198 112 C 220 112, 228 90, 206 72 L 62 22 Z" fill="#1E293B" stroke="#64748B" stroke-width="2.2" />
+    <path d="M -56 26 L 26 26 L 138 84 L -50 88 Z" fill="#334155" stroke="#94A3B8" stroke-width="1.8" />
+
+    <rect x="-64" y="96" width="256" height="10" rx="4" fill="#0F172A" stroke="#E2E8F0" stroke-width="2.2" />
+    <circle cx="146" cy="101" r="4.5" fill="#FFD166" />
+    <circle cx="162" cy="101" r="4.5" fill="#FFD166" />
+    <circle cx="-42" cy="86" r="6" fill="#00E5FF" />
+    <circle cx="55" cy="86" r="6" fill="#00E5FF" />
+    <circle cx="118" cy="86" r="6" fill="#00E5FF" />
+    <circle cx="172" cy="86" r="6" fill="#00E5FF" />
+
+    <path d="M 48 0 L 155 98 L 138 102 L 36 8 Z" fill="#0F172A" stroke="#E2E8F0" stroke-width="2.2" />
+    <path d="M 46 -4 L 112 18 L 106 32 L 40 10 Z" fill="#0F172A" stroke="#00E5FF" stroke-width="2.5" />
+    <rect x="66" y="1" width="18" height="6" rx="2" fill="#00E5FF" />
+    <rect x="63" y="13" width="18" height="6" rx="2" fill="#00E5FF" />
+
+    <line x1="106" y1="18" x2="106" y2="-62" stroke="#FFD166" stroke-width="4" marker-end="url(#bp-arrow-gold)" />
+    <line x1="154" y1="94" x2="154" y2="42" stroke="#FFD166" stroke-width="3.5" marker-start="url(#bp-arrow-gold)" />
+
+    <circle cx="48" cy="0" r="15" fill="#0F172A" stroke="#00E5FF" stroke-width="3" />
+    <circle cx="48" cy="0" r="5" fill="#FFD166" />
+    <circle cx="-6" cy="-6" r="11" fill="#9D4EDD" fill-opacity="0.35" stroke="#E9D5FF" stroke-width="2" stroke-dasharray="4 2" />
+
+    <path d="M 78 8 C 138 -40, 144 -140, 128 -200" fill="none" stroke="#00E5FF" stroke-width="2.2" stroke-dasharray="6 4" marker-end="url(#bp-arrow-cyan)" />
+    <path d="M 18 86 C -20 40, 20 -120, 66 -200" fill="none" stroke="#00E5FF" stroke-width="2.2" stroke-dasharray="6 4" marker-end="url(#bp-arrow-cyan)" />
+
+    <g transform="translate(-390, -300)">
+      <rect x="0" y="-20" width="295" height="40" rx="8" fill="#0F172A" stroke="#334155" stroke-width="1.5" />
+      <text x="16" y="5" fill="#00E5FF" font-size="12.5" font-weight="700" font-family="monospace">02. Calf Strap &amp; Spacer (Normal F_N)</text>
+    </g>
+    <g transform="translate(185, -235)">
+      <rect x="0" y="-20" width="295" height="40" rx="8" fill="#0F172A" stroke="#334155" stroke-width="1.5" />
+      <text x="16" y="5" fill="#E9D5FF" font-size="12.5" font-weight="700" font-family="monospace">03. RPi 4b + IAA100 (200 Hz Loop)</text>
+    </g>
+    <g transform="translate(185, -130)">
+      <rect x="0" y="-20" width="295" height="40" rx="8" fill="#0F172A" stroke="#334155" stroke-width="1.5" />
+      <text x="16" y="5" fill="#FFD166" font-size="12.5" font-weight="700" font-family="monospace">04. AK80-9 Motor + 0.020 m Drum</text>
+    </g>
+    <g transform="translate(-390, -10)">
+      <rect x="0" y="-20" width="305" height="40" rx="8" fill="#0F172A" stroke="#334155" stroke-width="1.5" />
+      <text x="16" y="5" fill="#00E5FF" font-size="12.5" font-weight="700" font-family="monospace">05. Pin Joint + Encoder vs. Bio Axis</text>
+    </g>
+    <g transform="translate(185, 15)">
+      <rect x="0" y="-20" width="315" height="40" rx="8" fill="#164E63" stroke="#00E5FF" stroke-width="2" />
+      <text x="16" y="5" fill="#F8FAFC" font-size="12.5" font-weight="700" font-family="monospace">06. Heel Spur (0.115 m) + Strain Bridge</text>
+    </g>
+    <g transform="translate(185, 105)">
+      <rect x="0" y="-20" width="315" height="40" rx="8" fill="#0F172A" stroke="#334155" stroke-width="1.5" />
+      <text x="16" y="5" fill="#E2E8F0" font-size="12.5" font-weight="700" font-family="monospace">07. Carbon Sole Plate + 4-Zone Insole</text>
+    </g>
+  </g>
+
+  <g transform="translate(36, 748)">
+    <rect x="0" y="0" width="1028" height="46" rx="8" fill="#0F172A" stroke="#1E293B" stroke-width="1.5" />
+    <text x="18" y="28" fill="#94A3B8" font-size="12.5" font-family="monospace">NOTE: Anatomy and joint axes are schematic. Force vectors (gold) and sensor paths (cyan dashed) represent documented relationships, not FEA stress maps.</text>
+  </g>
+</svg>
