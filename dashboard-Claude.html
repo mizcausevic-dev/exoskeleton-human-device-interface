@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en" data-theme="cosmic-cyber" data-mode="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EXOSKELETON HUMAN–DEVICE INTERFACE — Architecture &amp; Verification Dashboard</title>
+  <style>
+    :root {
+      --bg: #0B1019;
+      --panel: #111827;
+      --border: #1E293B;
+      --text: #F8FAFC;
+      --muted: #94A3B8;
+      --cyan: #00E5FF;
+      --gold: #FFD166;
+      --violet: #9D4EDD;
+      --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: ui-monospace, 'Cascadia Code', Consolas, monospace;
+      --radius: 12px;
+    }
+
+    /* 7 Theme Presets in Dark & Light Modes */
+    [data-theme="bento-grid"][data-mode="dark"] { --bg: #090D16; --panel: #131C2E; --border: #263554; --cyan: #38BDF8; --gold: #FBBF24; --violet: #A855F7; }
+    [data-theme="bento-grid"][data-mode="light"] { --bg: #F1F5F9; --panel: #FFFFFF; --border: #CBD5E1; --text: #0F172A; --muted: #475569; --cyan: #0284C7; --gold: #B45309; --violet: #7E22CE; }
+
+    [data-theme="cosmic-cyber"][data-mode="dark"] { --bg: #0B1019; --panel: #111827; --border: #1E293B; --cyan: #00E5FF; --gold: #FFD166; --violet: #9D4EDD; }
+    [data-theme="cosmic-cyber"][data-mode="light"] { --bg: #F8FAFC; --panel: #FFFFFF; --border: #E2E8F0; --text: #0B1019; --muted: #475569; --cyan: #0369A1; --gold: #B45309; --violet: #6D28D9; }
+
+    [data-theme="swiss-architect"][data-mode="dark"] { --bg: #111111; --panel: #1C1C1C; --border: #333333; --cyan: #00E5FF; --gold: #FFD166; --violet: #C084FC; --radius: 2px; }
+    [data-theme="swiss-architect"][data-mode="light"] { --bg: #FAFAFA; --panel: #FFFFFF; --border: #111111; --text: #111111; --muted: #525252; --cyan: #0055FF; --gold: #D97706; --violet: #7C3AED; --radius: 2px; }
+
+    [data-theme="aqua-web"][data-mode="dark"] { --bg: #071925; --panel: #0E2A3D; --border: #1D4ED8; --cyan: #22D3EE; --gold: #FDE047; --violet: #C084FC; --radius: 18px; }
+    [data-theme="aqua-web"][data-mode="light"] { --bg: #E0F2FE; --panel: #FFFFFF; --border: #7DD3FC; --text: #0C4A6E; --muted: #0369A1; --cyan: #0284C7; --gold: #CA8A04; --violet: #7E22CE; --radius: 18px; }
+
+    [data-theme="pop-brutalist"][data-mode="dark"] { --bg: #0D0B14; --panel: #1A162B; --border: #FFD166; --cyan: #00E5FF; --gold: #FFD166; --violet: #FF52A8; --radius: 0px; }
+    [data-theme="pop-brutalist"][data-mode="light"] { --bg: #FEF9C3; --panel: #FFFFFF; --border: #000000; --text: #000000; --muted: #333333; --cyan: #0066FF; --gold: #D97706; --violet: #9333EA; --radius: 0px; }
+
+    [data-theme="steel-tactical"][data-mode="dark"] { --bg: #0B0C10; --panel: #1F2833; --border: #45A29E; --cyan: #66FCF1; --gold: #FFD166; --violet: #9D4EDD; --radius: 6px; }
+    [data-theme="steel-tactical"][data-mode="light"] { --bg: #E5E7EB; --panel: #F9FAFB; --border: #374151; --text: #111827; --muted: #4B5563; --cyan: #0F766E; --gold: #B45309; --violet: #6D28D9; --radius: 6px; }
+
+    [data-theme="parchment"][data-mode="dark"] { --bg: #1C1917; --panel: #292524; --border: #44403C; --cyan: #38BDF8; --gold: #FBBF24; --violet: #C084FC; --radius: 8px; }
+    [data-theme="parchment"][data-mode="light"] { --bg: #F5F2EB; --panel: #FFFDF9; --border: #D6D3CD; --text: #292524; --muted: #57534E; --cyan: #0369A1; --gold: #B45309; --violet: #7C3AED; --radius: 8px; }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.55;
+    }
+    .container { max-width: 1280px; margin: 0 auto; }
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 20px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 24px;
+    }
+    .controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    select, button {
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      border-radius: var(--radius);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      margin-bottom: 8px;
+    }
+    h1, h2, h3 { margin-top: 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    th, td {
+      border-bottom: 1px solid var(--border);
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { font-family: var(--font-mono); color: var(--cyan); }
+    .pass { color: #22C55E; font-family: var(--font-mono); font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <span class="tag">WEARABLE ASSISTIVE ROBOTICS // SYSTEM DASHBOARD</span>
+        <h1 style="margin:4px 0;font-size:24px;">EXOSKELETON HUMAN–DEVICE INTERFACE</h1>
+        <div style="color:var(--muted);font-size:14px;">Standalone Architecture, Verification &amp; Product Definition Dashboard (Single-File HTML, Zero External Deps)</div>
+      </div>
+      <div class="controls">
+        <label for="theme-select" style="font-family:var(--font-mono);font-size:12px;">Theme:</label>
+        <select id="theme-select" aria-label="Select visual theme">
+          <option value="cosmic-cyber">Cosmic Cyber</option>
+          <option value="bento-grid">Bento Grid</option>
+          <option value="swiss-architect">Swiss Architect</option>
+          <option value="aqua-web">Aqua Web 2.0</option>
+          <option value="pop-brutalist">Pop Brutalist</option>
+          <option value="steel-tactical">Steel Tactical</option>
+          <option value="parchment">Parchment</option>
+        </select>
+        <button id="mode-toggle" type="button">Toggle Light / Dark</button>
+      </div>
+    </header>
+
+    <!-- 10-Dimension Product & System Definition -->
+    <h2 style="font-size:18px;margin-bottom:12px;">System &amp; Educational Product Definition (10 Core Dimensions)</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="tag">01. WHAT THE PRODUCT IS</span>
+        <h3>Deterministic Scientific Explainer &amp; Interactive Technical Publication</h3>
+        <p style="color:var(--muted);font-size:14px;">A complete interactive web application, 1,020-frame 1080p motion explainer (34s @ 30 fps), annotated blueprint, mind map, source ledger, and Medium-ready article dissecting the ankle exoskeleton human–device interface.</p>
+      </div>
+      <div class="card">
+        <span class="tag">02. WHO IT IS FOR</span>
+        <h3>Engineers, Biomechanists, Designers &amp; Robotics Newcomers</h3>
+        <p style="color:var(--muted);font-size:14px;">Built for technically curious readers, wearable hardware engineers, control architects, and physical rehabilitation researchers who need causal clarity without marketing hype.</p>
+      </div>
+      <div class="card">
+        <span class="tag">03. WHY IT WINS</span>
+        <h3>Single-Architecture Rigor &amp; Authoritative Frame Determinism</h3>
+        <p style="color:var(--muted);font-size:14px;">Rather than mixing parts from unrelated robots, every visual and claim traces to the documented Stanford untethered ankle architecture (Slade et al., 2022) and clinical review taxonomy (Siviy et al., 2023).</p>
+      </div>
+      <div class="card">
+        <span class="tag">04. HOW IT IS STRUCTURED</span>
+        <h3>Six Synchronized Pedagogical Surfaces</h3>
+        <p style="color:var(--muted);font-size:14px;">(1) Hero stage, (2) 5-chapter 34s deterministic player + reduced-motion view, (3) 7-node interactive blueprint, (4) 5-branch mind map, (5) 1,460-word article, and (6) filterable claim-to-source ledger.</p>
+      </div>
+      <div class="card">
+        <span class="tag">05. HOW USERS DISCOVER IT</span>
+        <h3>Technical Search, AEO Citation &amp; Open-Access Repository</h3>
+        <p style="color:var(--muted);font-size:14px;">Structured semantic HTML, explicit entity disambiguation (talocrural axis, Wheatstone bridge, CubeMars AK80-9, opportunistic optimization), and social-preview metadata.</p>
+      </div>
+      <div class="card">
+        <span class="tag">06. HOW USERS ENGAGE WITH IT</span>
+        <h3>Frame-Accurate Scrubbing, Keyboard Stepping &amp; Subsystem Inspection</h3>
+        <p style="color:var(--muted);font-size:14px;">Users scrub frames 0–1019, jump across 5 chapters, toggle reduced-motion static keyframes, inspect numbered hardware nodes (01–07), and filter primary evidence.</p>
+      </div>
+      <div class="card">
+        <span class="tag">07. HOW USERS CONVERT</span>
+        <h3>Artifact Download, Video Export &amp; Evidence Verification</h3>
+        <p style="color:var(--muted);font-size:14px;">Direct downloads for the 1080p H.264 MP4 explainer video, editable SVG figures, and source ledger documentation.</p>
+      </div>
+      <div class="card">
+        <span class="tag">08. COMMERCIAL &amp; EDUCATIONAL VALUE</span>
+        <h3>Reusable Scientific Visualization &amp; Technical Editorial Engine</h3>
+        <p style="color:var(--muted);font-size:14px;">Demonstrates reproducible scientific communication where browser UI and headless MP4 video share one pure TypeScript scene-state evaluator.</p>
+      </div>
+      <div class="card">
+        <span class="tag">09. HOW IT LAUNCHES</span>
+        <h3>Static-Compatible Vite Bundle (`dist/`) &amp; GitHub Pages Ready</h3>
+        <p style="color:var(--muted);font-size:14px;">Relative base path (`./`) ensures zero-config compatibility on root domains or `/repo-name/` GitHub Pages paths once repository publication is approved.</p>
+      </div>
+      <div class="card">
+        <span class="tag">10. HOW IT IMPROVES AFTER LAUNCH</span>
+        <h3>Cross-Joint Repurposing (Hip, Knee, Soft Exosuits)</h3>
+        <p style="color:var(--muted);font-size:14px;">The deterministic `computeSceneState(frame)` architecture repurposes directly to hip exoskeletons, soft cable-driven exosuits, and industrial ergonomic wearables.</p>
+      </div>
+    </div>
+
+    <!-- Verification Matrix -->
+    <div class="card">
+      <span class="tag">VERIFICATION MATRIX</span>
+      <h2>Automated Build, Timeline, Media &amp; Evidence Checks</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Check</th>
+            <th>Status</th>
+            <th>Verified Conditions &amp; Evidence</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Build</td>
+            <td>Production build &amp; asset resolution</td>
+            <td class="pass">PASS</td>
+            <td><code>npm run build</code> (TypeScript + Vite v8.3.5) succeeded with 0 errors; all SVG, PNG, and MP4 paths verified HTTP 200.</td>
+          </tr>
+          <tr>
+            <td>Timeline</td>
+            <td>1,020 frames (0–1019) @ 30 fps &amp; Final Hold (960–1019)</td>
+            <td class="pass">PASS</td>
+            <td>Chapters match brief (0–149, 150–299, 300–509, 510–749, 750–1019); camera/geometry lock verified across frames 960–1019.</td>
+          </tr>
+          <tr>
+            <td>Encoded Video</td>
+            <td>1920×1080 H.264 MP4 @ constant 30 fps</td>
+            <td class="pass">PASS</td>
+            <td>Verified via <code>ffprobe</code>: <code>codec_name=h264</code>, <code>1920x1080</code>, <code>r_frame_rate=30/1</code>, <code>nb_read_frames=1020</code>, <code>duration=34.000000s</code>.</td>
+          </tr>
+          <tr>
+            <td>Presentation</td>
+            <td>Desktop (1440×900), Mobile (390×844), Keyboard &amp; Reduced-Motion</td>
+            <td class="pass">PASS</td>
+            <td>Tested in headless Chromium via Playwright; keyboard transport, reduced-motion static keyframes, and full transcript verified.</td>
+          </tr>
+          <tr>
+            <td>Evidence</td>
+            <td>Claim-to-source ledger &amp; scientific limits</td>
+            <td class="pass">PASS</td>
+            <td>9 ledger entries mapped to Slade et al. (2022) and Siviy et al. (2023); qualitative graph explicitly badged.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const STORAGE_THEME = 'exo_dashboard_theme';
+      const STORAGE_MODE = 'exo_dashboard_mode';
+      const html = document.documentElement;
+      const select = document.getElementById('theme-select');
+      const toggle = document.getElementById('mode-toggle');
+
+      const savedTheme = localStorage.getItem(STORAGE_THEME) || 'cosmic-cyber';
+      const savedMode = localStorage.getItem(STORAGE_MODE) || 'dark';
+      html.setAttribute('data-theme', savedTheme);
+      html.setAttribute('data-mode', savedMode);
+      select.value = savedTheme;
+
+      select.addEventListener('change', function(e) {
+        const val = e.target.value;
+        html.setAttribute('data-theme', val);
+        localStorage.setItem(STORAGE_THEME, val);
+      });
+
+      toggle.addEventListener('click', function() {
+        const current = html.getAttribute('data-mode') === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-mode', current);
+        localStorage.setItem(STORAGE_MODE, current);
+      });
+    })();
+  </script>
+</body>
+</html>
