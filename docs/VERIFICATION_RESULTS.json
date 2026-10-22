@@ -1,0 +1,12 @@
+{
+  "assetPathsResolve": "PASS",
+  "requiredSectionsPresent": "PASS",
+  "timelineRange0To1019": "PASS",
+  "chapterBoundariesMatchBrief": "PASS",
+  "finalHold960To1019": "PASS",
+  "keyboardControlsFunction": "PASS",
+  "reducedMotionPresentation": "PASS",
+  "transcriptAndExplanatoryText": "PASS",
+  "desktopAndMobileViewports": "PASS",
+  "zeroRuntimeErrors": "PASS"
+}
